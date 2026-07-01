@@ -6,6 +6,9 @@ public class main {
         Scanner scanner = new Scanner(System.in);
         InventoryManager manager = new InventoryManager();
         int choice;
+        String filename = "data/inventory.csv";
+        
+        manager.loadFromFile(filename); 
 
         do {
             displayMenu();
@@ -75,6 +78,7 @@ public class main {
                     break;
 
                 case 6:
+                    manager.saveToFile(filename);
                     System.out.println("Exiting program.");
                     break;
 
@@ -94,7 +98,7 @@ public class main {
         System.out.println("3. Search item by name");
         System.out.println("4. Update item quantity");
         System.out.println("5. Delete item");
-        System.out.println("6. Exit");
+        System.out.println("6. Save and Exit");
         System.out.print("Choose an option: ");
     }
 }
