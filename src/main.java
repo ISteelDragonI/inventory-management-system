@@ -3,12 +3,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        DatabaseManager.initializeDatabase();
         InventoryManager manager = new InventoryManager();
-
-        String filename = "data/inventory.csv";
-
-        // Load saved inventory when the program starts.
-        manager.loadFromFile(filename);
 
         int choice;
 
@@ -40,7 +36,6 @@ public class Main {
                     break;
 
                 case 6:
-                    manager.saveToFile(filename);
                     System.out.println("Exiting program.");
                     break;
 
@@ -61,7 +56,7 @@ public class Main {
         System.out.println("3. Search item by name");
         System.out.println("4. Update item quantity");
         System.out.println("5. Delete item");
-        System.out.println("6. Save and exit");
+        System.out.println("6. Exit");
     }
 
     // Handles adding a new inventory item.
