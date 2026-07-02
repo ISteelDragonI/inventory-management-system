@@ -12,6 +12,12 @@ public class InventoryManager {
         items = new ArrayList<>();
     }
 
+    // Returns how many items are currently in the inventory.
+    // This is useful for testing and for checking inventory size.
+    public int getItemCount() {
+        return items.size();
+    }
+
     // Adds a new item to the inventory
     public void addItem(InventoryItem item){
         items.add(item);
